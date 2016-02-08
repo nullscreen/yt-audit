@@ -13,15 +13,5 @@ module Yt
       video_title = Yt::Video.new(id: video_id).title
       video_title.include? brand
     end
-
-  private
-
-    def self.card_count(video_ids)
-      video_ids.count {|id| has_info_cards? id }
-    end
-
-    def self.brand_anchor_count(video_ids, brand)
-      video_ids.count {|id| has_brand_anchoring? id, brand }
-    end
   end
 end
