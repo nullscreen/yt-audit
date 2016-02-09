@@ -1,4 +1,5 @@
 require 'test_helper'
+require 'yt/audit'
 
 class Yt::AuditTest < Minitest::Test
   def setup
@@ -23,5 +24,10 @@ class Yt::AuditTest < Minitest::Test
 
   def test_does_not_have_info_cards
     assert_equal false, Yt::Audit.has_info_cards?(@bad_video_id)
+  end
+
+  def test_invalid_video_id
+    assert_raises(NoMethodError) { Yt::Audit.has_info_cards?('') }
+    assert_raises(Yt::Errors::NoItems) { Yt::Audit.has_brand_anchoring?('', '') }
   end
 end
