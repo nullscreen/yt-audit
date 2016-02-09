@@ -1,10 +1,16 @@
 # Yt::Audit
 
-Welcome! This is a Ruby library you can audit titles, tags and annotations of a YouTube channel or playlist.
+Welcome! This is a Ruby library you can audit a YouTube video.
 
 ## Development
 
-    $ ruby test/yt/audit_test.rb
+    $ bin/setup
+
+    $ YT_API_KEY="123456789012345678901234567890" rake
+    $ open coverage/index.html
+
+    $ yardoc
+    $ open doc/index.html
 
 ## Usage
 
