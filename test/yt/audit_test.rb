@@ -14,6 +14,10 @@ class Yt::AuditTest < Minitest::Test
     assert_equal true, Yt::Audit.has_brand_anchoring?(@good_video_id, 'Budweiser')
   end
 
+  def test_brand_name_not_case_sensitive
+    assert_equal true, Yt::Audit.has_brand_anchoring?(@good_video_id, 'buDweIser')
+  end
+
   def test_does_not_have_brand_anchoring
     assert_equal false, Yt::Audit.has_brand_anchoring?(@bad_video_id, 'Budweiser')
   end
