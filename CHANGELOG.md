@@ -6,6 +6,10 @@ For more information about changelogs, check
 [Keep a Changelog](http://keepachangelog.com) and
 [Vandamme](http://tech-angels.github.io/vandamme).
 
+## 0.1.1  - Unreleased
+
+* [ENHANCEMENT] Brand name case-insensitive in `has_brand_anchoring?`
+
 ## 0.1.0  - Unreleased
 
 * [FEATURE] Add `has_info_cards?`
