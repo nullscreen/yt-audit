@@ -8,5 +8,5 @@ For more information about changelogs, check
 
 ## 0.1.0  - Unreleased
 
-* [FEATURE] Add 'has_info_cards?'
-* [FEATURE] Add 'has_brand_anchoring?'
+* [FEATURE] Add `has_info_cards?`
+* [FEATURE] Add `has_brand_anchoring?`
