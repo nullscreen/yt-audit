@@ -27,12 +27,6 @@ class Yt::AuditTest < Minitest::Test
     assert_equal false, Yt::Audit.has_info_cards?(@bad_video_id)
   end
 
-  def test_invalid_video_id
-    assert_raises(NoMethodError) { Yt::Audit.has_info_cards?('') }
-    assert_raises(Yt::Errors::NoItems) { Yt::Audit.has_brand_anchoring?('', '') }
-    assert_raises(NoMethodError) { Yt::Audit.has_subscribe_annotations?('') }
-  end
-
   def test_has_subscribe_annotations
     assert_equal true, Yt::Audit.has_subscribe_annotations?(@good_video_id)
   end
