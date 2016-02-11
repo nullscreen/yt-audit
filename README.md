@@ -2,12 +2,12 @@
 
 Welcome! This is a Ruby library you can audit a YouTube video.
 
-The **source code** is available on [GitHub](https://github.com/fullscreen/yt-audit) and the **documentation** on [RubyDoc](http://www.rubydoc.info/github/fullscreen/yt-audit/master/Yt/Audit).
+The **source code** is available on [GitHub](https://github.com/Fullscreen/yt-audit) and the **documentation** on [RubyDoc](http://www.rubydoc.info/github/fullscreen/yt-audit/master/Yt/Audit).
 
-[![Build Status](http://img.shields.io/travis/fullscreen/yt-audit/master.svg)](https://travis-ci.org/fullscreen/yt-audit)
-[![Coverage Status](http://img.shields.io/coveralls/fullscreen/yt-audit/master.svg)](https://coveralls.io/r/fullscreen/yt-audit)
-[![Dependency Status](http://img.shields.io/gemnasium/fullscreen/yt-audit.svg)](https://gemnasium.com/fullscreen/yt-audit)
-[![Code Climate](http://img.shields.io/codeclimate/github/fullscreen/yt-audit.svg)](https://codeclimate.com/github/fullscreen/yt-audit)
+[![Build Status](http://img.shields.io/travis/Fullscreen/yt-audit/master.svg)](https://travis-ci.org/Fullscreen/yt-audit)
+[![Coverage Status](http://img.shields.io/coveralls/Fullscreen/yt-audit/master.svg)](https://coveralls.io/r/Fullscreen/yt-audit)
+[![Dependency Status](http://img.shields.io/gemnasium/Fullscreen/yt-audit.svg)](https://gemnasium.com/Fullscreen/yt-audit)
+[![Code Climate](http://img.shields.io/codeclimate/github/Fullscreen/yt-audit.svg)](https://codeclimate.com/github/Fullscreen/yt-audit)
 [![Online docs](http://img.shields.io/badge/docs-✓-green.svg)](http://www.rubydoc.info/github/fullscreen/yt-audit/master/Yt/Audit)
 [![Gem Version](http://img.shields.io/gem/v/yt-audit.svg)](http://rubygems.org/gems/yt-audit)
 
