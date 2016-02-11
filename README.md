@@ -19,4 +19,6 @@ Yt::Audit.has_info_cards?('rF711XAtrVg')
 # => true
 Yt::Audit.has_brand_anchoring?('rF711XAtrVg', 'Budweiser')
 # => true
+Yt::Audit.has_subscribe_annotations?('rF711XAtrVg')
+# => false
 ```

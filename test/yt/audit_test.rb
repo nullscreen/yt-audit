@@ -3,23 +3,20 @@ require 'yt/audit'
 
 class Yt::AuditTest < Minitest::Test
   def setup
-    @good_channel_id = 'UCPCk_8dtVyR1lLHMBEILW4g'
-    @good_video_id = 'rF711XAtrVg' # temporarily use Budweiser
-
-    @bad_channel_id = 'UCQA5651nwDwKP2oLwv8hTkw'
-    @bad_video_id = 'Cq_Qo0uaIbI'
+    @good_video_id = 'iviMOnX8aks'
+    @bad_video_id = 'h5HrvPJGkL4'
   end
 
   def test_has_brand_anchoring
-    assert_equal true, Yt::Audit.has_brand_anchoring?(@good_video_id, 'Budweiser')
+    assert_equal true, Yt::Audit.has_brand_anchoring?(@good_video_id, 'Audit Good')
   end
 
   def test_brand_name_not_case_sensitive
-    assert_equal true, Yt::Audit.has_brand_anchoring?(@good_video_id, 'buDweIser')
+    assert_equal true, Yt::Audit.has_brand_anchoring?(@good_video_id, 'AudiT GOod')
   end
 
   def test_does_not_have_brand_anchoring
-    assert_equal false, Yt::Audit.has_brand_anchoring?(@bad_video_id, 'Budweiser')
+    assert_equal false, Yt::Audit.has_brand_anchoring?(@bad_video_id, 'Audit Good')
   end
 
   def test_has_info_cards
@@ -33,5 +30,14 @@ class Yt::AuditTest < Minitest::Test
   def test_invalid_video_id
     assert_raises(NoMethodError) { Yt::Audit.has_info_cards?('') }
     assert_raises(Yt::Errors::NoItems) { Yt::Audit.has_brand_anchoring?('', '') }
+    assert_raises(NoMethodError) { Yt::Audit.has_subscribe_annotations?('') }
+  end
+
+  def test_has_subscribe_annotations
+    assert_equal true, Yt::Audit.has_subscribe_annotations?(@good_video_id)
+  end
+
+  def test_does_not_have_subscribe_annotations
+    assert_equal false, Yt::Audit.has_subscribe_annotations?(@bad_video_id)
   end
 end
