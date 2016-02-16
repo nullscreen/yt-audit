@@ -29,5 +29,15 @@ module Yt
         annotation.link && annotation.link[:type] == :subscribe
       end
     end
+
+    # Audit youtube association of a video
+    # @param [String] video_id the video to audit.
+    # @return [Boolean] if the video description has link to its own channel.
+    def self.has_link_to_own_channel?(video_id)
+      video = Yt::Video.new(id: video_id)
+      video.description.split(' ')
+           .select {|word| Yt::URL.new(word).kind == :channel }
+           .any? {|link| Yt::Channel.new(url: link).id == video.channel_id }
+    end
   end
 end

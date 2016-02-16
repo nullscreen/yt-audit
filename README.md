@@ -31,4 +31,6 @@ Yt::Audit.has_brand_anchoring?('rF711XAtrVg', 'Budweiser')
 # => true
 Yt::Audit.has_subscribe_annotations?('rF711XAtrVg')
 # => false
+Yt::Audit.has_link_to_own_channel?('rF711XAtrVg')
+# => false
 ```
