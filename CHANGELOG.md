@@ -6,6 +6,10 @@ For more information about changelogs, check
 [Keep a Changelog](http://keepachangelog.com) and
 [Vandamme](http://tech-angels.github.io/vandamme).
 
+## 0.1.3  - 2016.02.16
+
+* [FEATURE] Add `has_link_to_own_channel?`
+
 ## 0.1.2  - 2016.02.11
 
 * [FEATURE] Add `has_subscribe_annotations?`

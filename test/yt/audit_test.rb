@@ -34,4 +34,12 @@ class Yt::AuditTest < Minitest::Test
   def test_does_not_have_subscribe_annotations
     assert_equal false, Yt::Audit.has_subscribe_annotations?(@bad_video_id)
   end
+
+  def test_has_youtube_association
+    assert_equal true, Yt::Audit.has_link_to_own_channel?(@good_video_id)
+  end
+
+  def test_does_not_have_youtube_association
+    assert_equal false, Yt::Audit.has_link_to_own_channel?(@bad_video_id)
+  end
 end
