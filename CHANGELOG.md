@@ -6,6 +6,11 @@ For more information about changelogs, check
 [Keep a Changelog](http://keepachangelog.com) and
 [Vandamme](http://tech-angels.github.io/vandamme).
 
+## 0.1.5  - 2016.02.17
+
+* [BUGFIX] Fix `has_end_cards?` for cases when Float `ends_at` is
+  greater than Fixnum `duration`
+
 ## 0.1.4  - 2016.02.17
 
 * [FEATURE] Add `has_end_cards?`

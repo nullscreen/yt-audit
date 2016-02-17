@@ -50,4 +50,8 @@ class Yt::AuditTest < Minitest::Test
   def test_does_not_have_end_cards
     assert_equal false, Yt::Audit.has_end_cards?(@bad_video_id)
   end
+
+  def test_has_end_cards_ends_after_video_duration
+    assert_equal true, Yt::Audit.has_end_cards?("Hskp8OlCTwU")
+  end
 end

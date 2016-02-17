@@ -48,7 +48,7 @@ module Yt
       video_duration = Yt::Video.new(id: video_id).duration
       Yt::Annotations.for(video_id).any? do |annotation|
         !annotation.is_a?(Yt::Annotations::Card) && annotation.link &&
-          annotation.ends_at.ceil == video_duration &&
+          (annotation.ends_at.floor..annotation.ends_at.ceil).include?(video_duration) &&
           video_duration - annotation.starts_at > 5
       end
     end
