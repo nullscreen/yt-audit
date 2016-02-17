@@ -6,6 +6,10 @@ For more information about changelogs, check
 [Keep a Changelog](http://keepachangelog.com) and
 [Vandamme](http://tech-angels.github.io/vandamme).
 
+## 0.1.4  - 2016.02.17
+
+* [FEATURE] Add `has_end_cards?`
+
 ## 0.1.3  - 2016.02.16
 
 * [FEATURE] Add `has_link_to_own_channel?`
