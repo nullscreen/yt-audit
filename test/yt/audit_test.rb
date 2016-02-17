@@ -3,7 +3,7 @@ require 'yt/audit'
 
 class Yt::AuditTest < Minitest::Test
   def setup
-    @good_video_id = 'iviMOnX8aks'
+    @good_video_id = 'zPQxhP4KDdg'
     @bad_video_id = 'h5HrvPJGkL4'
   end
 
@@ -41,5 +41,13 @@ class Yt::AuditTest < Minitest::Test
 
   def test_does_not_have_youtube_association
     assert_equal false, Yt::Audit.has_link_to_own_channel?(@bad_video_id)
+  end
+
+  def test_has_end_cards
+    assert_equal true, Yt::Audit.has_end_cards?(@good_video_id)
+  end
+
+  def test_does_not_have_end_cards
+    assert_equal false, Yt::Audit.has_end_cards?(@bad_video_id)
   end
 end
