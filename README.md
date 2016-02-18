@@ -1,6 +1,6 @@
 # Yt::Audit
 
-Welcome! This is a Ruby library you can audit a YouTube video.
+Welcome! This is a Ruby library you can audit a YouTube channel.
 
 The **source code** is available on [GitHub](https://github.com/Fullscreen/yt-audit) and the **documentation** on [RubyDoc](http://www.rubydoc.info/github/fullscreen/yt-audit/master/Yt/Audit).
 
@@ -25,14 +25,18 @@ The **source code** is available on [GitHub](https://github.com/Fullscreen/yt-au
 ## Usage
 
 ```ruby
-Yt::Audit.has_info_cards?('rF711XAtrVg')
-# => true
-Yt::Audit.has_brand_anchoring?('rF711XAtrVg', 'Budweiser')
-# => true
-Yt::Audit.has_subscribe_annotations?('rF711XAtrVg')
-# => false
-Yt::Audit.has_link_to_own_channel?('rF711XAtrVg')
-# => false
-Yt::Audit.has_end_cards?('rF711XAtrVg')
-# => false
+audit = Yt::Audit.for('UCPCk_8dtVyR1lLHMBEILW4g')
+# => #<Yt::Audit:0x007f822ba18f38 @info_card_count=10, @brand_anchor_count=10, @subscribe_count=0, @association_count=0, @end_card_count=0, @videos_count=10>
+audit.videos_count
+# => 10
+audit.info_card_count
+# => 10
+audit.brand_anchor_count
+# => 10
+audit.subscribe_count
+# => 0
+audit.association_count
+# => 0
+audit.end_card_count
+# => 0
 ```

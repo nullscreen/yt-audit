@@ -1,5 +1,5 @@
 module Yt
-  module Audit
-    VERSION = "0.1.5"
+  class Audit
+    VERSION = "0.2.0"
   end
 end
