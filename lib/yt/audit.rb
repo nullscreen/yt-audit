@@ -2,7 +2,28 @@ require 'yt'
 require 'yt/annotations'
 
 module Yt
-  module Audit
+  class Audit
+
+    attr_reader :info_card_count, :brand_anchor_count, :subscribe_count, :association_count, :end_card_count, :videos_count
+
+    # Audit a channel
+    # @param [String] channel_id of the channel to audit.
+    # @return [Yt::Audit] the object with video count attributes
+    def self.for(channel_id)
+      channel = Yt::Channel.new(id: channel_id)
+      video_ids = channel.videos.first(10).map(&:id)
+      new.tap do |audit|
+        audit.instance_variable_set :@info_card_count, video_ids.count {|id| has_info_cards?(id) }
+        audit.instance_variable_set :@brand_anchor_count, video_ids.count {|id| has_brand_anchoring?(id, channel.title) }
+        audit.instance_variable_set :@subscribe_count, video_ids.count {|id| has_subscribe_annotations?(id) }
+        audit.instance_variable_set :@association_count, video_ids.count {|id| has_link_to_own_channel?(id) }
+        audit.instance_variable_set :@end_card_count, video_ids.count {|id| has_end_cards?(id) }
+        audit.instance_variable_set :@videos_count, video_ids.count
+      end
+    end
+
+  private
+
     # Audit any info card of a video
     # @param [String] video_id the video to audit.
     # @return [Boolean] if the video has any info card.

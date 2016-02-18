@@ -54,4 +54,21 @@ class Yt::AuditTest < Minitest::Test
   def test_has_end_cards_ends_after_video_duration
     assert_equal true, Yt::Audit.has_end_cards?("Hskp8OlCTwU")
   end
+
+  def test_for
+    audit = Yt::Audit.for('UCKM-eG7PBcw3flaBvd0q2TQ')
+    assert_equal 4, audit.videos_count
+    assert_equal 2, audit.info_card_count
+    assert_equal 2, audit.brand_anchor_count
+    assert_equal 2, audit.subscribe_count
+    assert_equal 2, audit.association_count
+    assert_equal 1, audit.end_card_count
+  end
+
+  def test_audit_attributes_are_not_setters
+    audit = Yt::Audit.for('UCKM-eG7PBcw3flaBvd0q2TQ')
+    assert_raises NoMethodError do
+      audit.videos_count = 11
+    end
+  end
 end
