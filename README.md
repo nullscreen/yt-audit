@@ -30,20 +30,20 @@ The **source code** is available on [GitHub](https://github.com/Fullscreen/yt-au
 audit = Yt::Audit.new(channel_id: 'UCPCk_8dtVyR1lLHMBEILW4g')
 # => #<Yt::Audit:0x007f94ec8050b0 @channel_id="UCPCk_8dtVyR1lLHMBEILW4g">
 audit.run
-# => [#<Yt::VideoAudit::InfoCard:0x007f94ec8c6f30 @videos=[...]>, #<Yt::VideoAudit::BrandAnchoring...>, #<Yt::VideoAudit::SubscribeAnnotation...>, #<Yt::VideoAudit::YoutubeAssociation...>, #<Yt::VideoAudit::EndCard...>]
+# => [#<Yt::VideoAudit::InfoCard:0x007f94ec8c6f30 @videos=[...]>, #<Yt::VideoAudit::BrandAnchoring...>, #<Yt::VideoAudit::SubscribeAnnotation...>, #<Yt::VideoAudit::YoutubeAssociation...>, #<Yt::VideoAudit::EndCard...>, #<Yt::PlaylistAudit::Description...>]
 ```
 
-You can call four available methods `total_count`, `valid_count`, `title`, and `description` from each `Yt::VideoAudit` object.
+You can call four available methods `total_count`, `valid_count`, `title`, and `description` from each `Yt::VideoAudit` or `Yt::PlaylistAudit` object.
 
 ```ruby
-video_audit = audit.run[0]
+audit_item = audit.run[0]
 # => #<Yt::VideoAudit::InfoCard:0x007f94ec979ab8 @videos=[...]>
-video_audit.total_count
+audit_item.total_count
 # => 10
-video_audit.valid_count
+audit_item.valid_count
 # => 10
-video_audit.title
+audit_item.title
 # => "Info Cards"
-video_audit.description
+audit_item.description
 # => "The number of videos with an info card"
 ```
