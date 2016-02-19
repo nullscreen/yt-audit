@@ -10,9 +10,9 @@ end
 channel_id = ARGV[0] || 'UCKM-eG7PBcw3flaBvd0q2TQ'
 audit = Yt::Audit.new(channel_id: channel_id)
 puts "Channel: https://www.youtube.com/channel/#{channel_id}"
-audit.run.each do |video_audit|
+audit.run.each do |audit_item|
   puts
-  puts "#{video_audit.description}"
-  puts "#{video_audit.title}: #{video_audit.valid_count} out of #{video_audit.total_count}"
+  puts "#{audit_item.description}"
+  puts "#{audit_item.title}: #{audit_item.valid_count} out of #{audit_item.total_count}"
 end
 

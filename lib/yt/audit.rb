@@ -5,6 +5,7 @@ require 'yt/video_audit/brand_anchoring'
 require 'yt/video_audit/subscribe_annotation'
 require 'yt/video_audit/youtube_association'
 require 'yt/video_audit/end_card'
+require 'yt/playlist_audit/description'
 
 module Yt
   class Audit
@@ -18,11 +19,16 @@ module Yt
         Yt::VideoAudit::BrandAnchoring.new(videos: videos, brand: channel.title),
         Yt::VideoAudit::SubscribeAnnotation.new(videos: videos),
         Yt::VideoAudit::YoutubeAssociation.new(videos: videos),
-        Yt::VideoAudit::EndCard.new(videos: videos)
+        Yt::VideoAudit::EndCard.new(videos: videos),
+        Yt::PlaylistAudit::Description.new(playlists: playlists)
       ]
     end
 
   private
+
+    def playlists
+      @playlists ||= channel.playlists.first 10
+    end
 
     def videos
       @videos ||= channel.videos.first 10

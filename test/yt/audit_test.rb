@@ -25,5 +25,9 @@ class Yt::AuditTest < Minitest::Test
     assert_equal 'Possible End Card Annotations', result[4].title
     assert_equal 1, result[4].valid_count
     assert_equal 4, result[4].total_count
+
+    assert_equal 'Playlist Description', result[5].title
+    assert_equal 1, result[5].valid_count
+    assert_equal 2, result[5].total_count
   end
 end
