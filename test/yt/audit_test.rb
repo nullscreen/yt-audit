@@ -2,56 +2,28 @@ require 'test_helper'
 require 'yt/audit'
 
 class Yt::AuditTest < Minitest::Test
-  def setup
-    @good_video_id = 'zPQxhP4KDdg'
-    @bad_video_id = 'h5HrvPJGkL4'
-  end
+  def test_channel_audit
+    audit = Yt::Audit.new(channel_id: 'UCKM-eG7PBcw3flaBvd0q2TQ')
+    result = audit.run
 
-  def test_has_brand_anchoring
-    assert_equal true, Yt::Audit.has_brand_anchoring?(@good_video_id, 'Audit Good')
-  end
+    assert_equal 'Info Cards', result[0].title
+    assert_equal 2, result[0].valid_count
+    assert_equal 4, result[0].total_count
 
-  def test_brand_name_not_case_sensitive
-    assert_equal true, Yt::Audit.has_brand_anchoring?(@good_video_id, 'AudiT GOod')
-  end
+    assert_equal 'Brand Anchoring', result[1].title
+    assert_equal 2, result[1].valid_count
+    assert_equal 4, result[1].total_count
 
-  def test_does_not_have_brand_anchoring
-    assert_equal false, Yt::Audit.has_brand_anchoring?(@bad_video_id, 'Audit Good')
-  end
+    assert_equal 'Subscribe Annotations', result[2].title
+    assert_equal 2, result[2].valid_count
+    assert_equal 4, result[2].total_count
 
-  def test_has_info_cards
-    assert_equal true, Yt::Audit.has_info_cards?(@good_video_id)
-  end
+    assert_equal 'YouTube Association', result[3].title
+    assert_equal 2, result[3].valid_count
+    assert_equal 4, result[3].total_count
 
-  def test_does_not_have_info_cards
-    assert_equal false, Yt::Audit.has_info_cards?(@bad_video_id)
-  end
-
-  def test_has_subscribe_annotations
-    assert_equal true, Yt::Audit.has_subscribe_annotations?(@good_video_id)
-  end
-
-  def test_does_not_have_subscribe_annotations
-    assert_equal false, Yt::Audit.has_subscribe_annotations?(@bad_video_id)
-  end
-
-  def test_has_youtube_association
-    assert_equal true, Yt::Audit.has_link_to_own_channel?(@good_video_id)
-  end
-
-  def test_does_not_have_youtube_association
-    assert_equal false, Yt::Audit.has_link_to_own_channel?(@bad_video_id)
-  end
-
-  def test_has_end_cards
-    assert_equal true, Yt::Audit.has_end_cards?(@good_video_id)
-  end
-
-  def test_does_not_have_end_cards
-    assert_equal false, Yt::Audit.has_end_cards?(@bad_video_id)
-  end
-
-  def test_has_end_cards_ends_after_video_duration
-    assert_equal true, Yt::Audit.has_end_cards?("Hskp8OlCTwU")
+    assert_equal 'Possible End Card Annotations', result[4].title
+    assert_equal 1, result[4].valid_count
+    assert_equal 4, result[4].total_count
   end
 end

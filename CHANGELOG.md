@@ -6,6 +6,19 @@ For more information about changelogs, check
 [Keep a Changelog](http://keepachangelog.com) and
 [Vandamme](http://tech-angels.github.io/vandamme).
 
+## 0.2.0  - 2016.02.18
+
+**How to upgrade**
+
+If your code calls any of `has_end_cards?`, `has_link_to_own_channel?`, `has_subscribe_annotations?`, `has_brand_anchoring?`, or `has_info_cards?` method with a video id, they are removed. Instead, call `run` method from a `Yt::Audit` instance to get information of a channel.
+
+* [FEATURE] Add `run` method to audit a channel and count how many videos have each audit subject out of its recent 10 videos.
+* [REMOVAL] Remove `has_end_cards?`
+* [REMOVAL] Remove `has_link_to_own_channel?`
+* [REMOVAL] Remove `has_subscribe_annotations?`
+* [REMOVAL] Remove `has_brand_anchoring?`
+* [REMOVAL] Remove `has_info_cards?`
+
 ## 0.1.5  - 2016.02.17
 
 * [BUGFIX] Fix `has_end_cards?` for cases when Float `ends_at` is
