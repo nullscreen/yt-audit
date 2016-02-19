@@ -1,6 +1,6 @@
 # Yt::Audit
 
-Welcome! This is a Ruby library you can audit a YouTube video.
+Welcome! This is a Ruby library you can audit a YouTube channel.
 
 The **source code** is available on [GitHub](https://github.com/Fullscreen/yt-audit) and the **documentation** on [RubyDoc](http://www.rubydoc.info/github/fullscreen/yt-audit/master/Yt/Audit).
 
@@ -16,7 +16,7 @@ The **source code** is available on [GitHub](https://github.com/Fullscreen/yt-au
 
     $ bin/setup
 
-    $ YT_API_KEY="123456789012345678901234567890" rake
+    $ YT_API_KEY="123456789012345678901234567890123456789" rake
     $ open coverage/index.html
 
     $ yardoc
@@ -24,15 +24,26 @@ The **source code** is available on [GitHub](https://github.com/Fullscreen/yt-au
 
 ## Usage
 
+`run` method returns an array of objects. It uses channel title as brand name, and 10 recent videos of channel, currently.
+
 ```ruby
-Yt::Audit.has_info_cards?('rF711XAtrVg')
-# => true
-Yt::Audit.has_brand_anchoring?('rF711XAtrVg', 'Budweiser')
-# => true
-Yt::Audit.has_subscribe_annotations?('rF711XAtrVg')
-# => false
-Yt::Audit.has_link_to_own_channel?('rF711XAtrVg')
-# => false
-Yt::Audit.has_end_cards?('rF711XAtrVg')
-# => false
+audit = Yt::Audit.new(channel_id: 'UCPCk_8dtVyR1lLHMBEILW4g')
+# => #<Yt::Audit:0x007f94ec8050b0 @channel_id="UCPCk_8dtVyR1lLHMBEILW4g">
+audit.run
+# => [#<Yt::VideoAudit::InfoCard:0x007f94ec8c6f30 @videos=[...]>, #<Yt::VideoAudit::BrandAnchoring...>, #<Yt::VideoAudit::SubscribeAnnotation...>, #<Yt::VideoAudit::YoutubeAssociation...>, #<Yt::VideoAudit::EndCard...>]
+```
+
+You can call four available methods `total_count`, `valid_count`, `title`, and `description` from each `Yt::VideoAudit` object.
+
+```ruby
+video_audit = audit.run[0]
+# => #<Yt::VideoAudit::InfoCard:0x007f94ec979ab8 @videos=[...]>
+video_audit.total_count
+# => 10
+video_audit.valid_count
+# => 10
+video_audit.title
+# => "Info Cards"
+video_audit.description
+# => "The number of videos with an info card"
 ```

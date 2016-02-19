@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+begin
+  require 'yt/audit'
+rescue LoadError
+  require 'rubygems'
+  require 'yt/audit'
+end
+
+channel_id = ARGV[0] || 'UCKM-eG7PBcw3flaBvd0q2TQ'
+audit = Yt::Audit.new(channel_id: channel_id)
+puts "Channel: https://www.youtube.com/channel/#{channel_id}"
+audit.run.each do |video_audit|
+  puts
+  puts "#{video_audit.description}"
+  puts "#{video_audit.title}: #{video_audit.valid_count} out of #{video_audit.total_count}"
+end
+
