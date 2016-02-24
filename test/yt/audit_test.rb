@@ -30,4 +30,13 @@ class Yt::AuditTest < Minitest::Test
     assert_equal 1, result[5].valid_count
     assert_equal 2, result[5].total_count
   end
+
+  def test_ring_channel_info_cards
+    audit = Yt::Audit.new(channel_id: 'UCSDG3M0e2mGX9_qtHEtzj2Q')
+    result = audit.run
+
+    assert_equal 'Info Cards', result[0].title
+    assert_equal 0, result[0].valid_count
+    assert_equal 10, result[0].total_count
+  end
 end
