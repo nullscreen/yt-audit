@@ -1,6 +1,6 @@
 # Yt::Audit
 
-Welcome! This is a Ruby library you can audit a YouTube channel.
+Welcome! This is a Ruby library you can audit best practices of a YouTube channel.
 
 The **source code** is available on [GitHub](https://github.com/Fullscreen/yt-audit) and the **documentation** on [RubyDoc](http://www.rubydoc.info/github/fullscreen/yt-audit/master/Yt/Audit).
 
