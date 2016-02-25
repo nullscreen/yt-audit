@@ -16,7 +16,7 @@ module Yt
 
       def valid?(video)
         Yt::Annotations.for(video.id).any? do |annotation|
-          annotation.is_a? Yt::Annotations::Card
+          annotation.instance_of? Yt::Annotations::Card
         end
       end
     end

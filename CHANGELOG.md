@@ -6,6 +6,10 @@ For more information about changelogs, check
 [Keep a Changelog](http://keepachangelog.com) and
 [Vandamme](http://tech-angels.github.io/vandamme).
 
+## 0.2.2  - 2016.02.24
+
+## [BUGFIX] Fix condition of Info Card
+
 ## 0.2.1  - 2016.02.19
 
 * [FEATURE] Add `PlaylistAudit::Descripton` for `run` to also count playlists with a description.
