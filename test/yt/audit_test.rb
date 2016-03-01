@@ -3,7 +3,6 @@ require 'yt/audit'
 
 class Yt::AuditTest < Minitest::Test
   def test_channel_audit
-    skip
     audit = Yt::Audit.new(channel_id: 'UCKM-eG7PBcw3flaBvd0q2TQ')
     result = audit.run
 

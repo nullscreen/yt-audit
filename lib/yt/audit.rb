@@ -31,7 +31,7 @@ module Yt
     end
 
     def videos
-      @videos ||= channel.videos.first 10
+      @videos ||= channel.videos.includes(:snippet).first 10
     end
 
     def channel
