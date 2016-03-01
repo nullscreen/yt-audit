@@ -30,4 +30,12 @@ class Yt::AuditTest < Minitest::Test
     assert_equal 1, result[5].valid_count
     assert_equal 2, result[5].total_count
   end
+
+  def test_youtube_association_of_HollywoodGameNight
+    audit = Yt::Audit.new(channel_id: 'UCpBkBMO8IbYAMdtYNaMxKgQ')
+    result = audit.run
+    assert_equal 'YouTube Association', result[3].title
+    assert_equal 10, result[3].valid_count
+    assert_equal 10, result[3].total_count
+  end
 end
