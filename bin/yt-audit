@@ -8,8 +8,9 @@ rescue LoadError
 end
 
 channel_id = ARGV[0] || 'UCKM-eG7PBcw3flaBvd0q2TQ'
-audit = Yt::Audit.new(channel_id: channel_id)
 puts "Channel: https://www.youtube.com/channel/#{channel_id}"
+channel = Yt::Channel.new(id: channel_id)
+audit = Yt::Audit.new(channel: channel)
 audit.run.each do |audit_item|
   puts
   puts "#{audit_item.description}"

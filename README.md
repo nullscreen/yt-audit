@@ -24,11 +24,14 @@ The **source code** is available on [GitHub](https://github.com/Fullscreen/yt-au
 
 ## Usage
 
-`run` method returns an array of objects. It uses channel title as brand name, and 10 recent videos of channel, currently.
+`run` method returns an array of objects. `Yt::Audit` should be initialized with a `Yt::Channel` object of [yt](https://github.com/Fullscreen/yt) as `channel`.
+
+It can also have videos, brand name, and playlists as optional, but by default it uses maximum 10 recent videos of channel as `videos`, channel title as `brand` and maximum 10 recent playlists as `playlists` keyword argument.
 
 ```ruby
-audit = Yt::Audit.new(channel_id: 'UCPCk_8dtVyR1lLHMBEILW4g')
-# => #<Yt::Audit:0x007f94ec8050b0 @channel_id="UCPCk_8dtVyR1lLHMBEILW4g">
+channel = Yt::Channel.new(id: 'UCPCk_8dtVyR1lLHMBEILW4g')
+audit = Yt::Audit.new(channel: channel)
+# => #<Yt::Audit:0x007ffbb43fe780 @channel=#<Yt::Models::Channel...>, @videos=[...], @playlists=[...], @brand="budweiser">
 audit.run
 # => [#<Yt::VideoAudit::InfoCard:0x007f94ec8c6f30 @videos=[...]>, #<Yt::VideoAudit::BrandAnchoring...>, #<Yt::VideoAudit::SubscribeAnnotation...>, #<Yt::VideoAudit::YoutubeAssociation...>, #<Yt::VideoAudit::EndCard...>, #<Yt::PlaylistAudit::Description...>]
 ```

@@ -6,9 +6,19 @@ For more information about changelogs, check
 [Keep a Changelog](http://keepachangelog.com) and
 [Vandamme](http://tech-angels.github.io/vandamme).
 
+## 0.3.0  - 2016.03.01
+
+**How to upgrade**
+
+When your code defines an `Yt::Audit` object, it should be initialized with a `Yt::Channel` object as `channel:` argument. It used to accept `channel_id` string directly but now your code should define a channel with it first.
+
+* [ENHANCEMENT] Optionally send in `Yt::Collections::Videos` or `Yt::Collections::Playlists` object as arguments of an `Yt::Audit`, accompanied with `Yt::Models::Channel` object of yt.
+* [ENHANCEMENT] Send in brand name as an optional argument.
+* [BUGFIX] Fix videos input with longer description, for Youtube Association.
+
 ## 0.2.2  - 2016.02.24
 
-## [BUGFIX] Fix condition of Info Card
+* [BUGFIX] Fix condition of Info Card
 
 ## 0.2.1  - 2016.02.19
 
