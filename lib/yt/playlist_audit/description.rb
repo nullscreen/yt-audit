@@ -2,8 +2,8 @@ module Yt
   module PlaylistAudit
     # Count how many playlists have its description.
     class Description
-      def initialize(playlists:)
-        @playlists = playlists
+      def initialize(options={})
+        @playlists = options[:playlists]
       end
 
       def total_count

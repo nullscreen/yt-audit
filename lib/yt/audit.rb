@@ -9,33 +9,22 @@ require 'yt/playlist_audit/description'
 
 module Yt
   class Audit
-    def initialize(channel_id:)
-      @channel_id = channel_id
+    def initialize(channel:, videos: nil, playlists: nil, brand: nil)
+      @channel = channel
+      @videos = videos || channel.videos.includes(:snippet).first(10)
+      @playlists = playlists || channel.playlists.first(10)
+      @brand = brand || channel.title
     end
 
     def run
       [
-        Yt::VideoAudit::InfoCard.new(videos: videos),
-        Yt::VideoAudit::BrandAnchoring.new(videos: videos, brand: channel.title),
-        Yt::VideoAudit::SubscribeAnnotation.new(videos: videos),
-        Yt::VideoAudit::YoutubeAssociation.new(videos: videos),
-        Yt::VideoAudit::EndCard.new(videos: videos),
-        Yt::PlaylistAudit::Description.new(playlists: playlists)
+        Yt::VideoAudit::InfoCard.new(videos: @videos),
+        Yt::VideoAudit::BrandAnchoring.new(videos: @videos, brand: @brand),
+        Yt::VideoAudit::SubscribeAnnotation.new(videos: @videos),
+        Yt::VideoAudit::YoutubeAssociation.new(videos: @videos),
+        Yt::VideoAudit::EndCard.new(videos: @videos),
+        Yt::PlaylistAudit::Description.new(playlists: @playlists)
       ]
-    end
-
-  private
-
-    def playlists
-      @playlists ||= channel.playlists.first 10
-    end
-
-    def videos
-      @videos ||= channel.videos.first 10
-    end
-
-    def channel
-      @channel ||= Yt::Channel.new id: @channel_id
     end
   end
 end
