@@ -18,7 +18,12 @@ module Yt
       def valid?(video)
         video.description.split(' ')
              .select {|word| Yt::URL.new(word).kind == :channel }
-             .any? {|link| Yt::Channel.new(url: link).id == video.channel_id }
+             .any? {|link| channel_id(link) == video.channel_id }
+      end
+
+      def channel_id(url)
+        Yt::Channel.new(url: url).id
+      rescue Yt::Errors::NoItems
       end
     end
   end
