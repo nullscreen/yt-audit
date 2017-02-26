@@ -6,6 +6,10 @@ For more information about changelogs, check
 [Keep a Changelog](http://keepachangelog.com) and
 [Vandamme](http://tech-angels.github.io/vandamme).
 
+## 0.3.2  - 2017.02.26
+
+* [ENHANCEMENT] Don't limit Yt dependency to 0.25.x
+
 ## 0.3.1  - 2016.04.04
 
 * [BUGFIX] Fix condition of Youtube Association for invalid channel urls on the description.
