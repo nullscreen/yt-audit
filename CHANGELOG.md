@@ -6,6 +6,14 @@ For more information about changelogs, check
 [Keep a Changelog](http://keepachangelog.com) and
 [Vandamme](http://tech-angels.github.io/vandamme).
 
+## 0.4.0  - 2017.02.27
+
+**How to upgrade**
+
+If your code depends on the `yt` gem, ensure you use version 0.29.0 or higher.
+
+* [ENHANCEMENT] Use new `yt-url` gem, extracted from `yt`
+
 ## 0.3.2  - 2017.02.26
 
 * [ENHANCEMENT] Don't limit Yt dependency to 0.25.x

@@ -1,5 +1,6 @@
 require 'yt'
 require 'yt/annotations'
+require 'yt/url'
 require 'yt/video_audit/info_card'
 require 'yt/video_audit/brand_anchoring'
 require 'yt/video_audit/subscribe_annotation'
