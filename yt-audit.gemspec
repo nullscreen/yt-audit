@@ -20,7 +20,8 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "yt", '>= 0.25.22'
+  spec.add_dependency 'yt', '>= 0.29.1'
+  spec.add_dependency 'yt-url', '>= 1.0.0.beta1'
   spec.add_dependency "yt-annotations", '~> 1.2'
 
   spec.add_development_dependency "bundler", "~> 1.11"

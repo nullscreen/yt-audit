@@ -16,13 +16,16 @@ module Yt
     private
 
       def valid?(video)
-        video.description.split(' ')
-             .select {|word| Yt::URL.new(word).kind == :channel }
-             .any? {|link| channel_id(link) == video.channel_id }
+        video.description.split(' ').any? do |word|
+          if Yt::URL::CHANNEL_PATTERNS.any?{|pattern| word.match pattern}
+            url = Yt::URL.new word
+            url.kind == :channel && channel_id(url) == video.channel_id
+          end
+        end
       end
 
       def channel_id(url)
-        Yt::Channel.new(url: url).id
+        url.id
       rescue Yt::Errors::NoItems
       end
     end
