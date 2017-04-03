@@ -13,4 +13,5 @@ require 'yt/audit'
 
 Yt.configure do |config|
   config.log_level = :debug
+  config.api_key = ENV['YT_SERVER_API_KEY']
 end

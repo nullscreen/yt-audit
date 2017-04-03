@@ -43,7 +43,7 @@ class Yt::AuditTest < Minitest::Test
   end
 
   def test_channel_audit_with_videos_argument
-    videos = @channel.videos.includes(:snippet).first(4)
+    videos = @channel.videos.select(:snippet).first(4)
     audit = Yt::Audit.new(channel: @channel, videos: videos)
     result = audit.run
 

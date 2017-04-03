@@ -20,8 +20,8 @@ module Yt
       def valid?(video)
         Yt::Annotations.for(video.id).any? do |annotation|
           !annotation.is_a?(Yt::Annotations::Card) && annotation.link &&
-            (annotation.ends_at.floor..annotation.ends_at.ceil).include?(video.duration) &&
-            video.duration - annotation.starts_at > 5
+            (annotation.ends_at.floor..annotation.ends_at.ceil).include?(video.seconds) &&
+            video.seconds - annotation.starts_at > 5
         end
       end
     end

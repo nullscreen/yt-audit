@@ -16,7 +16,7 @@ The **source code** is available on [GitHub](https://github.com/Fullscreen/yt-au
 
     $ bin/setup
 
-    $ YT_API_KEY="123456789012345678901234567890123456789" rake
+    $ YT_SERVER_API_KEY="123456789012345678901234567890123456789" rake
     $ open coverage/index.html
 
     $ yardoc
