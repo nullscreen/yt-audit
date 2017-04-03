@@ -6,6 +6,14 @@ For more information about changelogs, check
 [Keep a Changelog](http://keepachangelog.com) and
 [Vandamme](http://tech-angels.github.io/vandamme).
 
+## 0.5.0  - 2017-04-03
+
+**How to upgrade**
+
+If your code depends on the `yt` gem, ensure you switch to the `yt-core` gem.
+
+* [ENHANCEMENT] Change dependency from 'yt' to the smaller 'yt-core'
+
 ## 0.4.0  - 2017-02-27
 
 **How to upgrade**

@@ -26,7 +26,7 @@ module Yt
 
       def channel_id(url)
         url.id
-      rescue Yt::Errors::NoItems
+      rescue Yt::NoItemsError
       end
     end
   end

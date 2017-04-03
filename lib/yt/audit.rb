@@ -1,4 +1,4 @@
-require 'yt'
+require 'yt/core'
 require 'yt/annotations'
 require 'yt/url'
 require 'yt/video_audit/info_card'
@@ -12,7 +12,7 @@ module Yt
   class Audit
     def initialize(channel:, videos: nil, playlists: nil, brand: nil)
       @channel = channel
-      @videos = videos || channel.videos.includes(:snippet).first(10)
+      @videos = videos || channel.videos.select(:snippet).first(10)
       @playlists = playlists || channel.playlists.first(10)
       @brand = brand || channel.title
     end

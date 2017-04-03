@@ -1,7 +1,8 @@
 language: ruby
+cache: bundler
+notifications:
+  email: false
 rvm:
-- 2.3.0
-before_install: gem install bundler -v 1.11.2
-env:
-  global:
-  - secure: JL/J6Dpj/c/ijmTV8q0VdkO1n2njongTw5KnSEcSMirJJK+s77jfFBrbk7Sgnysgf6FW2FbQLhna12jD+LMWw8ngUn8Jl5HBTL/uV/uuZD0Oam3K3zAFd88WoLZ1MUC9d8n8eVpmA2fgV+JMNKsOZDb8Kuwdas46FGlfsLC2pfenm6ILRZClAvxrq6CD8GcaZHDavxA1D2SdCvbVuZf3EA5cNZUeMt2V4jnnuw+3RrBff9Di87rfPvonZtWauBIpUzCtFvBbwEbUUnENRmbHRv/iEq88zSqk6YhMrCbcF1rLQgiCevVFaeCC/mUhV0U948eYK4R5hXBX9uhObT64uV0eFitOPewqUSwm4adEm55LFRUR0Xh+JFOgSnWuPCuAMB3jPln87WhOaEAd6Jw8cFAYWxdWjvlwqz3cf2VNLTzja49OEGyriRj1xYz67NtnVoMhp+PILt5j9ZDenklHGmHw/hRL2CMbzB36iqP1AXngcsD+62fKsdEB6ku/UbdZ4xGOD36o2oy6DuDwfbwiNC7v0TmXuHUFf/Ne6oLYTYyxpjhloX4S6K3DYE1YCj8uIjqGchiA8sV5ko3KxiKbTZDdEnHEnECOoVZ9Ucpyqp8FBwFJXy1sVm62fK9ZJp5tYLhD3s0q2AfmiPsK+RUEiyreV0c04Ric0NDQFB+dLRo=
+  - 2.2.2
+script:
+  - bundle exec rake
