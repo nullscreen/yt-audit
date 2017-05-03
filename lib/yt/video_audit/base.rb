@@ -7,7 +7,7 @@ module Yt
 
       # @return [Fixnum] number of all given videos.
       def total_count
-        @videos.size
+        @videos.count
       end
 
       # @return [Fixnum] number of videos satisfy given condition.
