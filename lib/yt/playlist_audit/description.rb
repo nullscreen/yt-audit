@@ -7,7 +7,7 @@ module Yt
       end
 
       def total_count
-        @playlists.size
+        @playlists.count
       end
 
       def valid_count

@@ -6,6 +6,10 @@ For more information about changelogs, check
 [Keep a Changelog](http://keepachangelog.com) and
 [Vandamme](http://tech-angels.github.io/vandamme).
 
+## 0.5.1 - 2017-05-03
+
+* [ENHANCEMENT] Reduce API calls to YouTube using .count, not .size
+
 ## 0.5.0  - 2017-04-03
 
 **How to upgrade**
