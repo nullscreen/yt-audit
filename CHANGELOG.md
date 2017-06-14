@@ -6,6 +6,15 @@ For more information about changelogs, check
 [Keep a Changelog](http://keepachangelog.com) and
 [Vandamme](http://tech-angels.github.io/vandamme).
 
+## 0.5.2 - 2017-06-14
+
+* [FEATURE] Add `VideoAudit::EndScreen` to count videos with end screens.
+* [FEATURE] Add `VideoAudit::TagsLength` to count videos with more than 400 characters in tags.
+* [FEATURE] Add `VideoAudit::SubscribeEndScreen` to count videos with a subscribe link in end screens.
+* [FEATURE] Add `VideoAudit::VideoEndScreen` to count videos with a video link in end screens.
+* [FEATURE] Add `VideoAudit::PlaylistEndScreen` to count videos with a playlist link in end screens.
+* [FEATURE] Add `VideoAudit::WebsiteEndScreen` to count videos with a website link in end screens.
+
 ## 0.5.1 - 2017-05-03
 
 * [ENHANCEMENT] Reduce API calls to YouTube using .count, not .size
