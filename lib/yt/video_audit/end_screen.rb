@@ -9,7 +9,7 @@ module Yt
       end
 
       def description
-        'The number of videos with at least one end screen'
+        'The number of videos with at least one end screen element'
       end
 
     private

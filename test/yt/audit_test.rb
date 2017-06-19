@@ -47,7 +47,7 @@ class Yt::AuditTest < Minitest::Test
     assert_equal 7, result[7].total_count
 
     assert_equal 'End Screens', result[6].title
-    assert_equal "The number of videos with at least one end screen", result[6].description
+    assert_equal "The number of videos with at least one end screen element", result[6].description
     assert_equal 2, result[6].valid_count
     assert_equal 7, result[6].total_count
 
