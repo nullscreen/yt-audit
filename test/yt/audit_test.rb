@@ -70,6 +70,11 @@ class Yt::AuditTest < Minitest::Test
     assert_equal "The number of videos with any external link in its end screens", result[11].description
     assert_equal 1, result[11].valid_count
     assert_equal 7, result[11].total_count
+
+    assert_equal 'In-Video Programming', result[12].title
+    assert_equal "The number of videos with an in-video programming", result[12].description
+    assert_equal 6, result[12].valid_count
+    assert_equal 7, result[12].total_count
   end
 
   def test_channel_audit_with_videos_argument
