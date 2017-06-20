@@ -6,6 +6,10 @@ For more information about changelogs, check
 [Keep a Changelog](http://keepachangelog.com) and
 [Vandamme](http://tech-angels.github.io/vandamme).
 
+## 0.5.3 - 2017-06-19
+
+* [FEATURE] Add `VideoAudit::InvideoProgramming` to count videos with a branding annotation.
+
 ## 0.5.2 - 2017-06-14
 
 * [FEATURE] Add `VideoAudit::EndScreen` to count videos with end screens.

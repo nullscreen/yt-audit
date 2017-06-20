@@ -2,7 +2,7 @@ require 'yt/video_audit/base'
 
 module Yt
   module VideoAudit
-    # Count how many subject videos have an end screens
+    # Count how many subject videos have an end screen
     # with a subscribe link.
     class SubscribeEndScreen < Base
       def title

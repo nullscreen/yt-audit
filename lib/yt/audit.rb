@@ -13,6 +13,7 @@ require 'yt/video_audit/subscribe_end_screen'
 require 'yt/video_audit/video_end_screen'
 require 'yt/video_audit/playlist_end_screen'
 require 'yt/video_audit/website_end_screen'
+require 'yt/video_audit/invideo_programming'
 
 module Yt
   class Audit
@@ -36,7 +37,8 @@ module Yt
         Yt::VideoAudit::SubscribeEndScreen.new(videos: @videos),
         Yt::VideoAudit::VideoEndScreen.new(videos: @videos),
         Yt::VideoAudit::PlaylistEndScreen.new(videos: @videos),
-        Yt::VideoAudit::WebsiteEndScreen.new(videos: @videos)
+        Yt::VideoAudit::WebsiteEndScreen.new(videos: @videos),
+        Yt::VideoAudit::InvideoProgramming.new(videos: @videos),
       ]
     end
   end
