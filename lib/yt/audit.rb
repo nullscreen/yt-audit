@@ -28,9 +28,7 @@ module Yt
       [
         Yt::VideoAudit::InfoCard.new(videos: @videos),
         Yt::VideoAudit::BrandAnchoring.new(videos: @videos, brand: @brand),
-        Yt::VideoAudit::SubscribeAnnotation.new(videos: @videos),
         Yt::VideoAudit::YoutubeAssociation.new(videos: @videos),
-        Yt::VideoAudit::EndCard.new(videos: @videos),
         Yt::PlaylistAudit::Description.new(playlists: @playlists),
         Yt::VideoAudit::EndScreen.new(videos: @videos),
         Yt::VideoAudit::TagsLength.new(videos: @videos),
@@ -39,6 +37,8 @@ module Yt
         Yt::VideoAudit::PlaylistEndScreen.new(videos: @videos),
         Yt::VideoAudit::WebsiteEndScreen.new(videos: @videos),
         Yt::VideoAudit::InvideoProgramming.new(videos: @videos),
+        Yt::VideoAudit::EndCard.new(videos: @videos),
+        Yt::VideoAudit::SubscribeAnnotation.new(videos: @videos),
       ]
     end
   end

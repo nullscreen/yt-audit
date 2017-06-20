@@ -19,7 +19,7 @@ module Yt
       end
 
       def description
-        'The number of playlists with description'
+        'The number of playlists with a description'
       end
 
     private
