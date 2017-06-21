@@ -22,7 +22,7 @@ class Yt::AuditTest < Minitest::Test
     assert_equal 7, result[1].total_count
 
     assert_equal 'YouTube Association', result[2].title
-    assert_equal "The number of videos with description has a link to its own channel", result[2].description
+    assert_equal "The number of videos where the description has a link to its own channel", result[2].description
     assert_equal 2, result[2].valid_count
     assert_equal 7, result[2].total_count
 
