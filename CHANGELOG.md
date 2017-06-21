@@ -6,6 +6,11 @@ For more information about changelogs, check
 [Keep a Changelog](http://keepachangelog.com) and
 [Vandamme](http://tech-angels.github.io/vandamme).
 
+
+## 0.5.4 - 2017-06-20
+
+* [ENHANCEMENT] Change order of audits.
+
 ## 0.5.3 - 2017-06-19
 
 * [FEATURE] Add `VideoAudit::InvideoProgramming` to count videos with a branding annotation.

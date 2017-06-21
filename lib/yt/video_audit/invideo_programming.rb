@@ -2,14 +2,14 @@ require 'yt/video_audit/base'
 
 module Yt
   module VideoAudit
-    # Count how many subject videos have a branding.
+    # Count how many subject videos have a branding annotation.
     class InvideoProgramming < Base
       def title
         'In-Video Programming'
       end
 
       def description
-        'The number of videos with an in-video programming'
+        'The number of videos with in-video programming'
       end
 
     private

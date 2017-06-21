@@ -10,7 +10,7 @@ module Yt
       end
 
       def description
-        'The number of videos with description has a link to its own channel'
+        'The number of videos where the description has a link to its own channel'
       end
 
     private
