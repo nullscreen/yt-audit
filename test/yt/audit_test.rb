@@ -63,7 +63,7 @@ class Yt::AuditTest < Minitest::Test
 
     assert_equal 'In-Video Programming', result[10].title
     assert_equal "The number of videos with in-video programming", result[10].description
-    assert_equal 6, result[10].valid_count
+    assert_equal 3, result[10].valid_count
     assert_equal 7, result[10].total_count
 
     assert_equal 'Possible End Card Annotations', result[11].title
