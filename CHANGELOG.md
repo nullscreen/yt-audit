@@ -6,16 +6,19 @@ For more information about changelogs, check
 [Keep a Changelog](http://keepachangelog.com) and
 [Vandamme](http://tech-angels.github.io/vandamme).
 
+## 0.5.5  - 2017-04-03
 
-## 0.5.4 - 2017-06-20
+* [BUGFIX] Change `VideoAudit::InvideoProgramming` to count videos with a 'featured content' annotation, not 'branding' annotation.
+
+## 0.5.4  - 2017-06-20
 
 * [ENHANCEMENT] Change order of audits.
 
-## 0.5.3 - 2017-06-19
+## 0.5.3  - 2017-06-19
 
 * [FEATURE] Add `VideoAudit::InvideoProgramming` to count videos with a branding annotation.
 
-## 0.5.2 - 2017-06-14
+## 0.5.2  - 2017-06-14
 
 * [FEATURE] Add `VideoAudit::EndScreen` to count videos with end screens.
 * [FEATURE] Add `VideoAudit::TagsLength` to count videos with more than 400 characters in tags.
@@ -24,7 +27,7 @@ For more information about changelogs, check
 * [FEATURE] Add `VideoAudit::PlaylistEndScreen` to count videos with a playlist link in end screens.
 * [FEATURE] Add `VideoAudit::WebsiteEndScreen` to count videos with a website link in end screens.
 
-## 0.5.1 - 2017-05-03
+## 0.5.1  - 2017-05-03
 
 * [ENHANCEMENT] Reduce API calls to YouTube using .count, not .size
 
