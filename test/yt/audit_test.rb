@@ -61,20 +61,15 @@ class Yt::AuditTest < Minitest::Test
     assert_equal 1, result[9].valid_count
     assert_equal 7, result[9].total_count
 
-    assert_equal 'In-Video Programming', result[10].title
-    assert_equal "The number of videos with in-video programming", result[10].description
+    assert_equal 'Possible End Card Annotations', result[10].title
+    assert_equal "The number of videos with a link annotation longer than 5 seconds, not an info card, at the end of its duration", result[10].description
     assert_equal 3, result[10].valid_count
     assert_equal 7, result[10].total_count
 
-    assert_equal 'Possible End Card Annotations', result[11].title
-    assert_equal "The number of videos with a link annotation longer than 5 seconds, not an info card, at the end of its duration", result[11].description
+    assert_equal 'Subscribe Annotations', result[11].title
+    assert_equal "The number of videos with a link to subscribe in its annotations", result[11].description
     assert_equal 3, result[11].valid_count
     assert_equal 7, result[11].total_count
-
-    assert_equal 'Subscribe Annotations', result[12].title
-    assert_equal "The number of videos with a link to subscribe in its annotations", result[12].description
-    assert_equal 3, result[12].valid_count
-    assert_equal 7, result[12].total_count
   end
 
   def test_channel_audit_with_videos_argument
@@ -88,14 +83,14 @@ class Yt::AuditTest < Minitest::Test
     assert_equal 'Brand Anchoring', result[1].title
     assert_equal 4, result[1].total_count
 
-    assert_equal 'Subscribe Annotations', result[12].title
-    assert_equal 4, result[12].total_count
+    assert_equal 'Subscribe Annotations', result[11].title
+    assert_equal 4, result[11].total_count
 
     assert_equal 'YouTube Association', result[2].title
     assert_equal 4, result[2].total_count
 
-    assert_equal 'Possible End Card Annotations', result[11].title
-    assert_equal 4, result[11].total_count
+    assert_equal 'Possible End Card Annotations', result[10].title
+    assert_equal 4, result[10].total_count
   end
 
   def test_channel_audit_with_playlists_argument
