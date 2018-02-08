@@ -6,6 +6,15 @@ For more information about changelogs, check
 [Keep a Changelog](http://keepachangelog.com) and
 [Vandamme](http://tech-angels.github.io/vandamme).
 
+
+## 0.6.0  - 2018-01-29
+
+**How to upgrade**
+
+If your code calls `VideoAudit::InvideoProgramming`, you should remove it.
+
+* [REMOVAL] Remove `VideoAudit::InvideoProgramming` because YouTube removed "Featured" annotations as of 12-14-2017. https://developers.google.com/youtube/v3/revision_history?id=november-27-2017
+
 ## 0.5.5  - 2017-07-05
 
 * [BUGFIX] Change `VideoAudit::InvideoProgramming` to count videos with a 'featured content' annotation, not 'branding' annotation.
@@ -29,7 +38,7 @@ For more information about changelogs, check
 
 ## 0.5.1  - 2017-05-03
 
-* [ENHANCEMENT] Reduce API calls to YouTube using .count, not .size
+* [ENHANCEMENT] Reduce API calls to YouTube using `.count`, not `.size`
 
 ## 0.5.0  - 2017-04-03
 
@@ -88,8 +97,7 @@ If your code calls any of `has_end_cards?`, `has_link_to_own_channel?`, `has_sub
 
 ## 0.1.5  - 2016-02-17
 
-* [BUGFIX] Fix `has_end_cards?` for cases when Float `ends_at` is
-  greater than Fixnum `duration`
+* [BUGFIX] Fix `has_end_cards?` for cases when Float `ends_at` is greater than Fixnum `duration`
 
 ## 0.1.4  - 2016-02-17
 
