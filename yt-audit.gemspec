@@ -27,7 +27,6 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'yt-core', '>= 0.1.0'
   spec.add_dependency 'yt-url', '>= 1.0.0.beta2'
-  spec.add_dependency 'yt-annotations', '~> 2.0'
 
   spec.add_development_dependency 'bundler', '~> 1.7'
   spec.add_development_dependency 'minitest', "~> 5.0"
