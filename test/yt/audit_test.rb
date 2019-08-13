@@ -63,12 +63,12 @@ class Yt::AuditTest < Minitest::Test
 
     assert_equal 'Possible End Card Annotations', result[10].title
     assert_equal "The number of videos with a link annotation longer than 5 seconds, not an info card, at the end of its duration", result[10].description
-    assert_equal 3, result[10].valid_count
+    assert_equal 2, result[10].valid_count
     assert_equal 7, result[10].total_count
 
     assert_equal 'Subscribe Annotations', result[11].title
     assert_equal "The number of videos with a link to subscribe in its annotations", result[11].description
-    assert_equal 3, result[11].valid_count
+    assert_equal 1, result[11].valid_count
     assert_equal 7, result[11].total_count
   end
 
